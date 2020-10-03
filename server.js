@@ -11,6 +11,9 @@ const expressLayout = require('express-ejs-layouts');
 const PORT = process.env.PORT || 3000;
 // if (process.env.PORT) { PORT = process.env.PORT; } else { PORT = 300; }
 
+// Assets
+app.use(express.static('public'));
+
 app.get('/', (req, res) => {
     //res.send('Hello from server');
     res.render('home');

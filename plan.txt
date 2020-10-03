@@ -6,11 +6,14 @@
         - Dev denpendancies
             -nodemon
 - [x] Create Express server - Create a server.js file
+- [x] Git setup and first commit
+- [x] Install Laravel Mix
+        - setup js and css
+- [x] Install tailwind css
 - [ ] Create Home page using Html and Css
-        - include tailwind css 
 - [ ] Create Cart page
-        -order summary section
-        -empty cart section
+        - order summary section
+        - empty cart section
 - [ ] Create Order controller and link it in server.js
 - [ ] Create Orders view with table for customer and admin
 - [ ] Create Orders single page with status
