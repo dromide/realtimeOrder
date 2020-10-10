@@ -10,7 +10,7 @@ const path = require('path');
 
 const expressLayout = require('express-ejs-layouts');
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3300;
 
 const mongoose = require('mongoose');
 
@@ -19,6 +19,8 @@ const session = require('express-session');
 const flash = require('express-flash');
 
 const MongoDbStore = require('connect-mongo')(session);
+
+const passport = require('passport');
 // if (process.env.PORT) { PORT = process.env.PORT; } else { PORT = 300; }
 
 // const { connected } = require('process');
@@ -59,6 +61,12 @@ app.use(session({
     cookie: { maxAge: 1000 * 60 * 60 * 24 } // 24 hours
 }));
 
+// Passport config
+const passportInit = require('./app/config/passport');
+passportInit(passport);
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(flash());
 
 
@@ -70,6 +78,7 @@ app.use(express.json());
 // Global middleware
 app.use((req, res, next) => {
     res.locals.session = req.session
+    res.locals.user = req.user
     next()
 });
 
