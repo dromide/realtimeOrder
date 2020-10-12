@@ -38,7 +38,8 @@
 - [x] Create Orders view with table for customer and admin
 - [x] Place order functionality
 - [x] Show all my orders on customer orders page
-- [x] Show orders on admin orders page
+- [x] Show orders on admin orders
+- [x] Change order status
 - [ ] Create Orders single page with status
 - [ ] Make order on carts page
 - [ ] Order tracker
